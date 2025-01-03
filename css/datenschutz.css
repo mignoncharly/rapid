@@ -1,0 +1,68 @@
+/******** Datenschutz Template Styles (Scoped) ********/
+
+#datenschutz-page {
+
+    /* General Container Styles */
+    .datenschutz-template {
+        font-family: Arial, sans-serif;
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 40px;
+    }
+  
+    .datenschutz-template h1 {
+        font-weight: 700;
+        color: #007bff;
+    }
+  
+    .datenschutz-template p {
+        font-size: 1.1rem;
+        color: #555;
+    }
+  
+    /* Accordion Styles */
+    .datenschutz-template .accordion-button {
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        font-weight: 500;
+        color: #6c757d;
+        transition: all 0.3s ease;
+    }
+  
+    .datenschutz-template .accordion-button:hover {
+        background-color: #e6edf3;
+        color: #fff;
+    }
+  
+    .datenschutz-template .accordion-button.collapsed {
+        color: #333;
+        background-color: #fff;
+    }
+  
+    .datenschutz-template .accordion-body {
+        padding: 20px;
+        font-size: 1rem;
+        background-color: #f9f9f9;
+        border-top: 1px solid #ddd;
+        color: #555;
+    }
+  
+    /* Heading Styles */
+    .datenschutz-template h4 {
+        font-weight: 600;
+        color: #6c757d;
+        margin-top: 20px;
+    }
+  
+    /* Link Styles */
+    .datenschutz-template a {
+        color: #6c757d;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+  
+    .datenschutz-template a:hover {
+        color: #6c757d;
+    }
+  }
+  

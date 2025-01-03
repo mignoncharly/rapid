@@ -1,0 +1,86 @@
+/******** About Template (scoped) ********/
+
+#about-page {
+
+    /* Header Section */
+    .about-template .text-section {
+        color: #333;
+        margin-bottom: 2rem;
+    }
+  
+    .about-template h1 {
+        font-weight: 700;
+        color: #333;
+    }
+  
+    .about-template p {
+        font-size: 1.2rem;
+        color: #555;
+    }
+  
+    /* Section Boxes */
+    .section-box {
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+  
+    .section-box:hover {
+        transform: translateY(-3px);
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+    }
+  
+    /* Mission and Why Choose Us */
+    .mission-section h3,
+    .why-choose-us-section h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color:  #5a6268;
+    }
+  
+    .mission-section p,
+    .why-choose-us-section ul {
+        color: #555;
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+  
+    .why-choose-us-section ul li {
+        font-size: 1rem;
+    }
+  
+    /* Contact Section */
+    .contact-section {
+        color: #333;
+    }
+
+      /* Add this h3 styling to match services page */
+    h3.display-4 {
+        font-weight: 700;
+        color: #333;
+    }
+  
+    .contact-section p {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+  
+    .contact-section .btn-primary {
+        background-color:  #5a6268;
+        border: none;
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+    }
+  
+    .contact-section .btn-primary:hover {
+        background-color:  #5a6268;
+        transform: translateY(-3px);
+    }
+  }
+  

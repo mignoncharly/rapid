@@ -1,0 +1,574 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* The main content area expands to push footer to the bottom */
+main {
+    flex: 1; /* or flex: 1 0 auto; */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  /* Let the body fill the entire viewport */
+    margin: 0;
+    padding: 0;
+    font-family: 'Lora', serif; /* Keep your font-family or other props here */
+  }
+  
+header, footer {
+    z-index: 1000;
+}
+
+.lang-icon {
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.lang-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Navbar Styling */
+.navbar-nav .nav-link {
+    color: #000000; /* Black color */
+    font-style: italic;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    /* NOTE: Change font-size here if you want it larger or smaller */
+    font-size: 23px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #6c757d;
+}
+
+/* Logo and Title Styling */
+.logo-container img {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add slight shadow */
+}
+
+/* Adjust the size of the logo */
+
+.logoo-img {
+    width: 120px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 10px;
+    border: none;
+    box-shadow: none;
+}
+
+.company-title {
+    color: #000000;  /* Black color */
+    font-size: 24px; /* Adjust font-size here if needed */
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.company-title:hover {
+    color: #6c757d;
+}
+
+.logo-container .company-title {
+    color: #000000;
+    font-size: 20px;  /* changed was 21*/
+    margin-left: 10px; /* Added */
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.logo-container .company-title:hover {
+    color: #6c757d; /* Gray color on hover */
+}
+
+/* Navbar Styling */
+nav .nav-link {
+    color: #000000; /* Black color */
+    font-size: 21px; /* Font size */
+    font-weight: bold; /* Bold text */
+    font-style: italic; /* Italic text */
+    text-transform: uppercase; /* Uppercase letters */
+    text-decoration: none; /* No underline */
+    letter-spacing: 1px; /* Spacing between letters */
+    padding: 0 15px; /* Add horizontal padding */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+nav .nav-link:hover {
+    color: #6c757d; /* Gray color on hover */
+}
+
+/* Align navigation items */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+/* Footer does not grow or push upward */
+footer {
+    flex-shrink: 0;
+    border-top: 1px solid #ddd;  /* Keep your existing border if you want it */
+    /* background-color, padding, etc. can stay if needed */
+  }
+  
+
+footer.bg-white.shadow-sm.text-center.py-3 {
+    flex-shrink: 0; /* Prevents footer from growing or floating */
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative !important;
+    height: 90vh; /* Maintain the original height */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: visible !important;
+    font-family: 'Lora', serif;
+    margin-top: 0; /* Creates space for the banner */
+    z-index: 1;
+}
+
+.hero-section img.hero-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Push the image behind the content */
+    /* margin-top: 50px;  Aligns the image with the space for the banner */
+    margin-top: 0 !important;
+}
+
+/* Add a dark overlay on top of the image */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35); /* Slight dark overlay */
+    z-index: 0; /* Positioned between the image and content */
+}
+
+
+.hero-buttons .btn {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.9); /* Semi-transparent white border */
+    color: white; /* Default text color in German */
+    font-size: 2rem;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    z-index: 1; /* Ensure buttons are above the overlay */
+    transition: all 0.3s ease;
+}
+
+/* Hover state for hero buttons */
+.hero-buttons .btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slight white background */
+    color: #de9801; /* Hover text color */
+    border-color: #de9801; /* Optional: Change border color */
+}
+
+/* Active/click state for hero buttons */
+.hero-buttons .btn:active {
+    background-color: rgba(222, 152, 1, 0.2); /* Transparent orange background */
+    color: #de9801; /* Active text color */
+    border-color: #de9801; /* Optional: Change border color */
+}
+
+/* Adjust the container's position to move text/buttons down */
+.hero-section .container {
+    position: relative;
+    top: 160px; /* Push content down */
+}
+
+/* 1) Hero carousel container spans the full width & sets a fixed height */
+.hero-carousel {
+    position: relative;   /* Allows absolutely positioned slides/overlay */
+    width: 100%;
+    height: 80vh;         /* Adjust: 80vh, 90vh, or a fixed px height, up to you */
+    overflow: hidden;     
+    margin: 0 auto;       /* Center horizontally if needed */
+    padding: 0;           /* Remove default container padding if any */
+}
+  
+  /* 2) The slides wrapper fills the full height of .hero-carousel */
+.hero-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* 3) Each .hero-slide is absolutely positioned and hidden unless .active */
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;  /* Hide by default */
+}
+  
+.hero-slide.active {
+    display: block;       /* Only show the slide with .active */
+}
+
+/* 4) Force images to fill the slide, cropping if needed */
+.hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* Crop images to fill their container */
+}
+
+/* 5) Overlay the text/buttons container on top of the slides */
+.hero-carousel .container-fluid.h-100 {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;       /* No extra spacing on overlay container */
+    padding: 0;
+    display: flex;   /* Already set in your HTML as well */
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* 6) Optional: If you need a different top padding or offset for the text, adjust here */
+.hero-carousel .container-fluid.h-100 .hero-buttons {
+    margin-top: 0; /* or whatever you like */
+}
+
+/* Features Section */
+
+.features-section {
+    background-color: #f8f9fa; /* Light gray background for contrast */
+    padding: 40px 0;
+}
+
+.feature-card {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 350px; /* Set a fixed height for each card */
+    width: 100%; /* Set the width to fill the column */
+    min-height: 300px; /* Bump up from your current 350px if you like */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    font-size: 40px; /* Adjust the size of the icons */
+    color: #343a40; /* Use a primary color for the icons */
+}
+
+.feature-card h3 {
+    font-size: 2 rem;
+    font-weight: 600;
+    color: #343a40; /* Dark gray for text */
+}
+
+.feature-card p {
+    font-size: 1.5rem;
+    color: #6c757d; /* Muted gray for secondary text */
+    font-style: italic;
+}
+
+
+.big-bold-heading {
+    /* Use Impact or similar fallback fonts for that extra-bold style */
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 2rem !important;         /* Adjust size as you wish */
+    font-weight: 900;        /* Very bold weight */
+    text-transform: uppercase;
+    letter-spacing: 1px;     /* Slightly space out letters */
+    line-height: 1.2;        /* Adjust for comfortable line spacing */
+    margin-bottom: 1rem;     /* Spacing below the heading */
+}
+
+@media (min-width: 768px) {
+    .big-bold-heading {
+        font-size: 3rem !important; /* Larger heading on bigger screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-card {
+        height: auto; /* Adjust height for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section .container {
+      top: 80px !important;  /* Instead of 160px; adjust as needed */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .announcement-content {
+        margin-left: 1rem; /* A small left margin to avoid the hamburger icon */
+    }
+}
+
+/* Parallax Background for Services Section */
+.services-section {
+    position: relative;
+    background-image: url('../img/para.JPG'); /* Replace with your image path */
+    background-attachment: fixed; /* Creates the parallax effect */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 0; /* Adjust padding to make content stand out */
+    color: rgb(11, 0, 0); /* Ensure text is visible against the background */
+    z-index: 1;
+}
+
+/* Optional: Add a dark overlay for better text visibility */
+.services-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 0;
+}
+
+.services-section .container-fluid {
+    position: relative;
+    z-index: 1; /* Ensures the content is above the overlay */
+}
+
+@media (max-width: 768px) {
+    .services-section {
+        background-attachment: scroll; /* Disable parallax effect */
+    }
+}
+
+
+.service-card {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    min-height: 450px; /* Or 500px, 600px, etc. */
+    padding: 30px;     /* More padding for a larger “feel” */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h2.big-bold-heading {
+    font-size: 2.3rem !important; /* Increase heading size */
+}
+
+.service-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.service-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #000306; /* Dark gray for text */
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 1.5rem; /* Slightly larger text */
+    line-height: 1.4;  /* More spacing between lines */
+    color: #6c757d; /* Muted gray for secondary text */
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.service-card .btn {
+    background-color:  #686162;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    padding: 12px 24px; 
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+
+/* 1) Add left/right padding to container-fluid in certain sections */
+.services-section .container-fluid,
+.features-section .container-fluid {
+  padding-left: 4rem; 
+  padding-right: 4rem;
+}
+
+.service-card .btn:hover {
+    background-color: #9283d3;
+}
+
+.carousel img {
+    height: 300px; /* Fixed height for all images */
+    object-fit: cover; /* Maintain image proportions */
+    border-radius: 8px;
+}
+
+/* Contact Info Styling */
+.contact-info {
+    font-size: 1rem; /* Increase font size */
+    font-weight: bold; /* Make text bold */
+    justify-content: center; /* Center align the text */
+}
+
+.contact-info i {
+    color: #000; /* Icon color */
+    font-size: 1.2rem; /* Increase icon size */
+    margin-right: 5px; /* Add spacing after icon */
+}
+
+.contact-info span {
+    color: #333; /* Text color */
+    margin-right: 15px; /* Spacing between phone and email */
+}
+
+.lang-icon {
+    width: 25px; /* Flag icon size */
+    height: 18px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.lang-icon:hover {
+    transform: scale(1.2); /* Scale up on hover */
+}
+
+
+/* Announcement Banner */
+.hero-container {
+    position: relative;
+    margin-top: 0; /* Pulls the container closer to the navbar */
+}
+
+.announcement-banner {
+    position: relative !important;
+    z-index: 9999;
+     /*position: relative; Change from absolute to relative */
+    width: 100%;
+    background-color: #de9801;
+    color: #721c24;
+    padding: 10px 0;
+    /*  z-index: 1000;  */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden; /* Ensures text won’t extend past the banner */
+}
+
+/* Adjust main content spacing */
+main.mt-3 {
+    margin-top: 0 !important; /* Override Bootstrap margin */
+    position: relative;
+    z-index: 2;
+    flex: 1 0 auto; /* Main content grows to fill space, pushing footer down */
+}
+
+/* Adjust the size of the logo */
+.logoo-img {
+    width: 120px; /* Set desired width */
+    height: 60px; /* Set desired height */
+    object-fit: contain; /* Ensures proportional scaling */
+    /*  margin-right: 10px; Space between the logo and text */
+    border: none; /* Removes any border around the image */
+    box-shadow: none; /* Removes shadow if previously added */
+}
+
+/* Ensure content flows properly */
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+.announcement-banner .container {
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+}
+
+.announcement-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-left 20s linear infinite; /* Smooth scrolling animation */
+}
+
+.announcement-text {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.navbar-collapse {
+    position: relative;
+    z-index: 1050; /* Ensure it stays above other elements */
+}
+
+/* Scrolling Animation */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.collapse.show {
+    display: block !important; /* Ensure it overrides any conflicting styles */
+}
+
+/* Pause animation on hover */
+.announcement-banner:hover .announcement-content {
+    animation-play-state: paused;
+}
+

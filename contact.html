@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt - Rapid Shipping</title>
+
+    <!-- Bootstrap + Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+
+    <!-- (Optional) Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS (Adjust the filenames as needed) -->
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/contact.css" />
+
+    <!-- Example: Google Font Lora -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Load the header snippet here -->
+    <div id="header-container"></div>
+
+
+<main id="contact-page" class="container my-4">
+  <!-- Contact Template -->
+  <div class="container my-4">
+    <!-- Header Section -->
+    <h3 class="text-center display-4 mb-4" data-i18n="CONTACT_TITLE">Kontaktieren Sie uns</h3>
+    <p class="text-center lead mb-5" data-i18n="CONTACT_DESCRIPTION">
+      Haben Sie Fragen oder benötigen Sie ein Angebot? Wir helfen Ihnen gerne weiter!
+    </p>
+  </div>
+
+    <!-- Contact Section -->
+    <div class="row align-items-center">
+      <!-- Contact Form -->
+      <div class="col-md-6">
+        <div class="contact-form p-4 shadow rounded">
+          <form id="contactForm">
+            <div class="mb-3">
+              <label for="name" class="form-label" data-i18n="CONTACT_FORM_LABEL_NAME">Ihr Name</label>
+              <input type="text" id="name" name="name" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label" data-i18n="CONTACT_FORM_LABEL_EMAIL">Ihre E-Mail</label>
+              <input type="email" id="email" name="email" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label" data-i18n="CONTACT_FORM_LABEL_MESSAGE">Ihre Nachricht</label>
+              <textarea
+                id="message"
+                name="message"
+                class="form-control"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+            <div class="text-center">
+              <button
+                type="button"
+                onclick="sendToWhatsApp()"
+                class="btn btn-primary px-4 py-2"
+                data-i18n="CONTACT_FORM_BUTTON_SEND"
+              >
+                Nachricht senden
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-6 text-center text-md-start mt-5 mt-md-0">
+        <h3 class="mb-4" data-i18n="CONTACT_INFO_TITLE">Kontaktinformationen</h3>
+        <p>
+          <strong data-i18n="CONTACT_INFO_PHONE_LABEL">Telefon:</strong> +49(0)15906199969
+        </p>
+        <p>
+          <strong data-i18n="CONTACT_INFO_EMAIL_LABEL">E-Mail:</strong>
+          <a href="mailto:info@rapid-shipping.de">info@rapid-shipping.de</a>
+        </p>
+        <p>
+          <strong data-i18n="CONTACT_INFO_ADDRESS_LABEL">Adresse:</strong> In den Haferwiesen 09, 552299 Nackenheim, Deutschland
+        </p>
+        <p>
+          <strong data-i18n="CONTACT_INFO_HOURS_LABEL">Bürozeiten:</strong> <span data-i18n="CONTACT_INFO_HOURS_TEXT">Montag - Freitag 09:00 Uhr - 18:00 Uhr</span>
+        </p>
+        <p data-i18n="CONTACT_INFO_AVAILABLE">
+          Wir stehen Ihnen während der Geschäftszeiten zur Verfügung und beantworten Ihre Fragen.
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+    <!-- Load the footer snippet here -->
+    <div id="footer-container"></div>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+    <!-- Snippet Loader -->
+    <script src="js/snippet-loader.js"></script>
+
+    <!-- Optional: Simple Language Switcher -->
+    <script>
+      function setLanguage(lang) {
+        console.log("Language changed to: " + lang);
+      }
+    </script>
+
+    <!-- Load header & footer snippets -->
+    <script>
+        loadSnippet("partials/header.html", "header-container");
+        loadSnippet("partials/footer.html", "footer-container");
+    </script>
+      
+<script>
+  function sendToWhatsApp() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    if (!name || !email || !message) {
+      // Retrieve the translated alert message
+      const alertMessage = translations["CONTACT_FORM_ALERT_FILL_FIELDS"] || "Bitte füllen Sie alle Felder aus, bevor Sie die Nachricht senden.";
+      alert(alertMessage);
+      return;
+    }
+
+    // Replace with your phone number (no "+" sign, just digits).
+    const phoneNumber = '4917640455470';
+    const text = `
+Hallo,
+
+${message}
+
+Email: ${email}
+Name: ${name}
+    `;
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+
+    // Open WhatsApp in a new tab
+    window.open(url, '_blank');
+
+    // Clear the form
+    document.getElementById('contactForm').reset();
+  }
+</script>
+
+
+<!-- i18n script -->
+<script src="js/i18n.js"></script>
+</body>
+</html>

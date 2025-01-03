@@ -1,0 +1,94 @@
+/*******************************
+Services Page Scoped
+To avoid overriding global CSS
+*******************************/
+
+#services-page {
+  /* If you want general “services template” styles, put them here */
+
+  h3.display-4 {
+    font-weight: 700;
+    color: #333;
+  }
+
+  .button-wrapper {
+    margin-top: 1rem;
+  }
+
+  /* Update service-section spacing */
+  .service-section {
+    padding: 40px 0;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Ensure proper spacing in mobile view */
+  @media (max-width: 767px) {
+    .button-wrapper {
+      margin-bottom: 2rem !important;
+    }
+    
+    .service-section {
+      padding: 20px 0;
+    }
+  }
+
+  p.lead {
+    font-size: 1.2rem;
+    color: #666;
+  }
+
+  
+  /* More distinct <p> styling for this page: */
+  p {
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    font-size: larger;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  /* Carousel images */
+  .carousel-inner img {
+    width: 100%;
+    height: 600px; /* Increased image height */
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  /* Section styling */
+  .service-section {
+    padding: 40px 0;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    background-color: #6c757d;
+    border: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #5a6268;
+    transform: translateY(-3px);
+  }
+
+  /* big-bold-heading */
+  .big-bold-heading {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 3rem; /* Adjust as needed */
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .big-bold-heading {
+      font-size: 4rem;
+    }
+  }
+}
+
+

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="SCHEDULE_TITLE">Versandplan | Rapid Shipping</title>
+  <!-- Bootstrap + Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+  />
+
+  <!-- (Optional) Font Awesome -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Custom CSS (Adjust the filenames as needed) -->
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/schedule.css" />
+
+  <!-- Example: Google Font Lora -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+  <!-- Load the header snippet here -->
+  <div id="header-container"></div>
+
+  <main id="schedule-page" class="my-4">
+    <div class="container my-4">
+
+      <h3 class="text-center display-4 mb-4 page-title" data-i18n="SCHEDULE_HEADER">Versandplan</h3>
+
+      <p class="text-center lead mb-5" data-i18n="SCHEDULE_DESCRIPTION">
+        Informieren Sie sich über unsere aktuellen Sammel-, Versand- und Liefertermine.
+      </p>
+      
+      <!-- Two-column Layout -->
+      <div class="row align-items-center">
+        <!-- Text Content -->
+        <div class="col-lg-6 col-md-12 mb-4">
+          <h2 class="fw-bold" data-i18n="SCHEDULE_PLAN_HEADER">Planen Sie Ihre Sendungen mit uns</h2>
+          <p data-i18n="SCHEDULE_PLAN_DESCRIPTION">
+            Nutzen Sie unseren Versandplan, um Ihre Sammeltermine, Versandtermine und voraussichtlichen Lieferdaten besser zu planen. Verpassen Sie keine wichtigen Termine mehr.
+          </p>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <i class="bi bi-calendar-check"></i>
+              <span data-i18n="SCHEDULE_COLLECT_DATE">Sammeltermine: 22. November 2024</span>
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-truck"></i>
+              <span data-i18n="SCHEDULE_SHIP_DATE">Versandtermine: 29. November 2024</span>
+            </li>
+            <li>
+              <i class="bi bi-box-seam"></i>
+              <span data-i18n="SCHEDULE_DELIVERY_DATE">Liefertermine: 1. Februar 2025</span>
+            </li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary mt-3" data-i18n="SCHEDULE_CONTACT_BUTTON">Kontaktieren Sie uns</a>
+        </div>
+
+        <!-- Calendar Section -->
+        <div id="calendar-container" class="shadow p-3 rounded">
+          <div id="calendar" data-appointments=""></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FullCalendar -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const calendarEl = document.getElementById('calendar');
+      const translations = {
+        de: {
+          events: [
+            { title: "Sammeltermin", start: "2024-11-22", color: "#FF6347" },
+            { title: "Versandtermin", start: "2024-11-29", color: "#4682B4" },
+            { title: "Liefertermin", start: "2025-02-01", color: "#32CD32" }
+          ],
+          buttonText: {
+            today: "Heute",
+            month: "Monat",
+            week: "Woche",
+            day: "Tag"
+          }
+        },
+        en: {
+          events: [
+            { title: "Collection Date", start: "2024-11-22", color: "#FF6347" },
+            { title: "Shipping Date", start: "2024-11-29", color: "#4682B4" },
+            { title: "Delivery Date", start: "2025-02-01", color: "#32CD32" }
+          ],
+          buttonText: {
+            today: "Today",
+            month: "Month",
+            week: "Week",
+            day: "Day"
+          }
+        },
+        fr: {
+          events: [
+            { title: "Date de collecte", start: "2024-11-22", color: "#FF6347" },
+            { title: "Date d'expédition", start: "2024-11-29", color: "#4682B4" },
+            { title: "Date de livraison", start: "2025-02-01", color: "#32CD32" }
+          ],
+          buttonText: {
+            today: "Aujourd'hui",
+            month: "Mois",
+            week: "Semaine",
+            day: "Jour"
+          }
+        }
+      };
+
+      const lang = localStorage.getItem("preferredLang") || "de";
+      const langData = translations[lang];
+
+      const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: "dayGridMonth",
+        locale: lang,
+        headerToolbar: {
+          left: "prev,next today",
+          center: "title",
+          right: "dayGridMonth,timeGridWeek,timeGridDay"
+        },
+        events: langData.events,
+        buttonText: langData.buttonText
+      });
+
+      calendar.render();
+    });
+  </script>
+
+  <!-- Load the footer snippet here -->
+  <div id="footer-container"></div>
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  ></script>
+
+  <!-- Snippet Loader -->
+  <script src="js/snippet-loader.js"></script>
+
+  <!-- Optional: Simple Language Switcher -->
+  <script>
+    function setLanguage(lang) {
+      // This function will be defined in i18n.js
+      console.log("Language changed to: " + lang);
+    }
+  </script>
+
+  <!-- Load header & footer snippets -->
+  <script>
+    loadSnippet("partials/header.html", "header-container");
+    loadSnippet("partials/footer.html", "footer-container");
+  </script>
+
+  <!-- i18n script -->
+  <script src="js/i18n.js"></script>
+</body>
+</html>

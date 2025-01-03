@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Über Uns - Rapid Shipping</title>
+
+  <!-- Bootstrap + Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+  />
+
+  <!-- (Optional) Font Awesome -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Custom CSS (Adjust the filenames as needed) -->
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/about.css" />
+
+  <!-- Example: Google Font Lora -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+  <!-- Load the header snippet here -->
+  <div id="header-container"></div>
+
+  <main id="about-page" class="my-4">
+    <div class="container my-5 about-template">
+      <!-- Header Section -->
+      <!-- about.html updates -->
+      <div class="container my-4">
+        <div class="text-section text-center mb-4">
+          <h3 class="text-center display-4 mb-4 page-title" data-i18n="ABOUT_TITLE">Über Uns</h3>
+          <p class="text-center lead mb-5" data-i18n="ABOUT_DESCRIPTION">
+            Erfahren Sie mehr über unser Unternehmen und unsere Mission, den
+            Transport weltweit sicher und einfach zu gestalten.
+          </p>
+        </div>
+      </div>
+
+      <!-- Mission and Why Choose Us -->
+      <div class="row align-items-center justify-content-center">
+        <!-- Mission Section -->
+        <div class="col-md-5 mb-4">
+          <div class="mission-section section-box shadow rounded p-4">
+            <h3 class="text-primary mb-3">
+              <i class="bi bi-flag-fill me-2"></i>
+              <span data-i18n="ABOUT_MISSION_TITLE">Unsere Mission</span>
+            </h3>
+            <p data-i18n="ABOUT_MISSION_DESC">
+              Wir bieten zuverlässige Transportlösungen für Kunden, die ihre Güter
+              weltweit versenden möchten. Unser Ziel ist es, den Prozess einfach,
+              sicher und effizient zu gestalten. Mit unserer langjährigen Erfahrung
+              garantieren wir exzellenten Service und Kundenzufriedenheit.
+            </p>
+          </div>
+        </div>
+
+        <!-- Why Choose Us Section -->
+        <div class="col-md-5 mb-4">
+          <div class="why-choose-us-section section-box shadow rounded p-4">
+            <h3 class="text-primary mb-3">
+              <i class="bi bi-award-fill me-2"></i>
+              <span data-i18n="ABOUT_WHY_CHOOSE_US_TITLE">Warum Uns Wählen</span>
+            </h3>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <span data-i18n="ABOUT_WHY_CHOOSE_US_LIST_1">Erfahrenes Team</span>
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <span data-i18n="ABOUT_WHY_CHOOSE_US_LIST_2">Transparente Preise</span>
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <span data-i18n="ABOUT_WHY_CHOOSE_US_LIST_3">Hervorragender Kundenservice</span>
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <span data-i18n="ABOUT_WHY_CHOOSE_US_LIST_4">Sichere Verpackung und Lieferung</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action Section -->
+      <div class="text-center contact-section mt-5">
+        <p class="mb-4" data-i18n="ABOUT_CONTACT_P">
+          Wir sind stolz darauf, unseren Kunden den besten Service zu bieten.
+        </p>
+        <a href="contact.html" class="btn btn-primary" data-i18n="ABOUT_CONTACT_BTN">Kontaktieren Sie uns</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Load the footer snippet here -->
+  <div id="footer-container"></div>
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  ></script>
+
+  <!-- Snippet Loader -->
+  <script src="js/snippet-loader.js"></script>
+
+  <!-- Optional: Simple Language Switcher -->
+  <script>
+    function setLanguage(lang) {
+      // This function will be defined in i18n.js
+      console.log("Language changed to: " + lang);
+    }
+  </script>
+
+  <!-- Load header & footer snippets -->
+  <script>
+    loadSnippet("partials/header.html", "header-container");
+    loadSnippet("partials/footer.html", "footer-container");
+  </script>
+
+  <!-- i18n script -->
+  <script src="js/i18n.js"></script>
+</body>
+</html>

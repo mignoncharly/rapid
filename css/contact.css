@@ -1,0 +1,93 @@
+/******** Contact Template (Scoped) ********/
+
+#contact-page {
+
+    /* Header Section */
+    .contact-template .text-section {
+      color: #333;
+    }
+  
+    .contact-template h1 {
+      font-weight: 700;
+      color: #333;
+    }
+  
+    .contact-template p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+  
+    /* Form Styles */
+    .contact-form {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    .contact-form .form-control {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 10px;
+      font-size: 1rem;
+    }
+  
+    .contact-form .form-control:focus {
+      border-color: #007bff;
+      box-shadow: 0px 0px 4px rgba(0, 123, 255, 0.5);
+    }
+  
+    .contact-form .btn-primary {
+      background-color: #007bff;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+  
+    .contact-form .btn-primary:hover {
+      background-color: #0056b3;
+      transform: translateY(-3px);
+    }
+  
+    /* Contact Info Styles */
+    .contact-template h3 {
+      font-size: 1.5rem;
+      color: #333;
+    }
+  
+    .contact-template p {
+      font-size: 1rem;
+      color: #555;
+    }
+  
+    .contact-template a {
+      color: #007bff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+  
+    .contact-template a:hover {
+      color: #0056b3;
+    }
+
+      /* Add this h3 styling to match services page */
+    h3.display-4 {
+      font-weight: 700;
+      color: #333;
+    }
+
+    p.lead {
+      font-size: 1.2rem;
+      color: #666;
+    }
+  
+     /* Contact Info Section - update h3 styling for the contact info section specifically */
+    .contact-info h3 {
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+  }
+  

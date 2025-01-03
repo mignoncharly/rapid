@@ -1,0 +1,76 @@
+/******** Impressum Template Styles (Scoped) ********/
+
+#impressum-page {
+    /* General Styles */
+    .impressum-template {
+        color: #333;
+    }
+  
+    .impressum-template h1 {
+        font-weight: 700;
+        color: #007bff;
+    }
+  
+    .impressum-template p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #555;
+    }
+  
+    /* Card Styling */
+    .impressum-template .card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    .impressum-template .card-body h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #555;
+    }
+  
+    .impressum-template .card-body h3 {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #007bff;
+        margin-top: 2rem;
+    }
+  
+    /* Address Section */
+    .impressum-template address {
+        font-style: normal;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+    }
+  
+    .impressum-template address a {
+        font-weight: 600;
+        color: #007bff;
+        transition: color 0.3s ease;
+    }
+  
+    .impressum-template address a:hover {
+        color: #0056b3;
+    }
+  
+    /* Disclaimer Section */
+    .impressum-template .card-body p {
+        margin-bottom: 1.5rem;
+        color: #555;
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+  
+    /* Additional spacing & styling */
+    .card-body .mt-3 {
+        margin-top: 10px;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+  
+    .card-body .mt-3 p {
+        margin-bottom: 5px; /* Adjust spacing between lines */
+    }
+  }
+  

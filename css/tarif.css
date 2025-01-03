@@ -1,0 +1,67 @@
+/******** TARIF PAGE ********/
+
+/* The main wrapper ID so these rules won't leak outside */
+#tarif-page {
+
+    /* For the heading or container spacing. 
+       (You had .preise-template h1, but let's do .tarif-page h1 or #tarif-page h1) */
+    h3.display-4 {
+      font-weight: 700;
+      color: #333;
+    }
+  
+    p.lead {
+      font-size: 1.2rem;
+      color: #555;
+    }
+  
+    /* Table Styles */
+    .table {
+      border: 1px solid #ddd;
+    }
+  
+    .table thead {
+      background-color: #343a40;
+      color: #fff;
+    }
+  
+    .table tbody tr:hover {
+      background-color: #f8f9fa;
+    }
+  
+    /* Conditions Section */
+    .conditions ul {
+      padding: 0;
+    }
+  
+    .conditions li {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #333;
+      border: none;
+    }
+  
+    .conditions li i {
+      font-size: 1.2rem;
+    }
+  
+    .conditions p {
+      font-size: 1rem;
+      color: #777;
+    }
+  
+    /* Button Styles */
+    .btn-outline-dark {
+      color: #343a40;
+      border: 2px solid #343a40;
+      font-weight: 600;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+  
+    .btn-outline-dark:hover {
+      background-color: #343a40;
+      color: #fff;
+    }
+  }
+  
